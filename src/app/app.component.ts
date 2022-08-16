@@ -47,7 +47,7 @@ export class AppComponent {
 
   public onDelete(intern: Intern): void {
     console.log('Click was detected');
-    //splice remove l'element par l'indexOf element choisi
+    //splice remove l'element par l'indexOf element choisi, 1 = nb d'elements a enlever
     this.interns.splice(this.interns.indexOf(intern), 1);
   }
 }
