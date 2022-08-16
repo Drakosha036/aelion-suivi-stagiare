@@ -20,6 +20,7 @@
       <th>Firstname</th>
       <th>Email</th>
       <th>Phone</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
 
@@ -30,6 +31,7 @@
       <td>{{intern.firstname}}</td>
       <td>{{intern.email}}</td>
       <td>{{intern.phoneNumber}}</td>
+      <td><span (click)="onDelete(intern)">X</span></td>
     </tr>
   </tbody>
 </table>

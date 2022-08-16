@@ -44,4 +44,10 @@ export class AppComponent {
   public getTitle() : string {
     return this.title;
   }
+
+  public onDelete(intern: Intern): void {
+    console.log('Click was detected');
+    //splice remove l'element par l'indexOf element choisi
+    this.interns.splice(this.interns.indexOf(intern), 1);
+  }
 }
