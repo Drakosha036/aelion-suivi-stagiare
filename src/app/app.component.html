@@ -2,7 +2,7 @@
   {{ getTitle() }}
 </p>
 
-
+<!--
 <div class="intern-card" *ngFor="let intern of interns">
   <p>
     <span>
@@ -11,7 +11,7 @@
     {{ intern.firstname }}
 </p>
 </div>
-
+-->
 <table>
   <thead>
     <tr>
@@ -26,7 +26,7 @@
   <tbody>
     <tr *ngFor="let intern of interns">
       <td>{{intern.id}}</td>
-      <td>{{intern.name}}</td>
+      <td>{{intern.name | uppercase }}</td>
       <td>{{intern.firstname}}</td>
       <td>{{intern.email}}</td>
       <td>{{intern.phoneNumber}}</td>
