@@ -11,6 +11,10 @@ export class AppComponent {
   //Attributs de classe
   private title = 'Hello Angular 13!';
 
+  //attribut static qu'on peut appeler sans instance
+  //par defaut l'ordre de tri est croissant
+  public static sortOrder: number = 1;
+
   //objet intern qui est cree a partir de la classe Intern
   public intern : Intern = {
     name: 'Aubert',
@@ -43,6 +47,30 @@ export class AppComponent {
 
   public getTitle() : string {
     return this.title;
+  }
+
+  public sortByName() : void {
+    console.log('tableau trie');
+    this.interns.sort(
+      //on appelle la fonction de classe
+      AppComponent.sortName
+    );
+    //change la valeur de l'ordre
+    AppComponent.sortOrder = AppComponent.sortOrder * -1;
+    console.log(`Ater sort, sortOrder is ${AppComponent.sortOrder}`);
+  }
+
+  //fonction de la classe grace au static
+  private static sortName(intern1 : Intern, intern2: Intern) : number {
+    if (intern1.name > intern2.name) {
+      return 1 * AppComponent.sortOrder;
+    } else if (intern1.name < intern2.name) {
+      return -1 * AppComponent.sortOrder;
+    } else {
+      return 0;
+    }
+
+
   }
 
   public onDelete(intern: Intern): void {
